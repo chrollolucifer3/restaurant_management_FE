@@ -4,8 +4,8 @@ import './styles.scss';
 import {Popover} from "antd";
 import { useSelector } from 'react-redux';
 import contentInfo from './components/PopoverProfile';
-import contentNotification from './components/PopoverNotification';
-import contentMessage from './components/PopoverMessage';
+// import contentNotification from './components/PopoverNotification';
+// import contentMessage from './components/PopoverMessage';
 
 const Header = () => {
   const authUser = useSelector(state => state.auth.authUser);
@@ -46,7 +46,7 @@ const Header = () => {
           </div>
         </div>
 
-        <Popover className={`popover-info-wrap`} placement="bottomRight" content={contentNotification} trigger="click">
+        {/* <Popover className={`popover-info-wrap`} placement="bottomRight" content={contentNotification} trigger="click">
           <div className={`${styles.itemHeaderRight} ${styles.notificationAnimationWrap}`}>
             <div className={`${styles.iconWrap}`}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20.571" width="18" height="20.571">
@@ -64,7 +64,7 @@ const Header = () => {
               </svg>
             </div>
           </div>
-        </Popover>
+        </Popover> */}
 
         <div className={`${styles.itemHeaderRight}`}>
           <Popover className={`popover-info-wrap`} placement="bottomRight" content={contentInfo} trigger="click">

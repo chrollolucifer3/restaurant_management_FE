@@ -1,0 +1,50 @@
+@import 'src/assets/scss/variables';
+
+.mainModalWrap {
+    width: 100%;
+    .inputWrapper {
+      width: 100%;
+      margin-bottom: 18px;
+  
+      .label {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: $colorBlack;
+        margin-bottom: 4px;
+      }
+  
+      .error {
+        display: block;
+        color: $colorError;
+        font-weight: 500;
+      }
+    }
+
+    .boxFilterWrap {
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+
+      .inputWrap {
+        width: 100%;
+        position: relative;
+        margin-right: 10px;
+
+        input {
+          border: 1px solid $colorBorderInput;
+          border-radius: 3px;
+          padding-right: 40px;
+        }
+
+        svg {
+          position: absolute;
+          top: 16px;
+          right: 15px;
+          cursor: pointer;
+        }
+      }
+    }
+  }

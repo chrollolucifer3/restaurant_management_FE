@@ -1,0 +1,28 @@
+@import 'src/assets/scss/variables';
+
+
+.boxFilterWrap {
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    .inputWrap {
+      width: 100%;
+      position: relative;
+      margin-right: 10px;
+
+      input {
+        border: 1px solid $colorBorderInput;
+        border-radius: 3px;
+        padding-right: 40px;
+      }
+
+      svg {
+        position: absolute;
+        top: 16px;
+        right: 15px;
+        cursor: pointer;
+      }
+    }
+  }

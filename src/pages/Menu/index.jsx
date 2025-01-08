@@ -52,7 +52,7 @@ function Menu() {
   const [dataFilter, setDataFilter] = useState({
     keySearch: "",
     status: "",
-    perPage: 10,
+    perPage: 16,
     page: 1,
     order: null,
     column: null,
@@ -123,7 +123,7 @@ function Menu() {
           <div className={styles.boxFilterWrap}>
             <div className={styles.inputWrap}>
               <InputRES
-                placeholder="Search by name, email or phone"
+                placeholder="Search by name"
                 value={dataFilter.keySearch}
                 onChange={(e) => handleSearch(e)}
               />
@@ -176,11 +176,11 @@ function Menu() {
             handleShowConfirmDelete={handleShowConfirmDelete} // Truyền hàm handleShowConfirmDelete
             grid={{
               gutter: 16,
-              xs: 2,
-              sm: 3,
+              xs: 3,
+              sm: 4,
               md: 4,
               lg: 5,
-              xl: 6,
+              xl: 5,
               xxl: 8,
             }}
           />

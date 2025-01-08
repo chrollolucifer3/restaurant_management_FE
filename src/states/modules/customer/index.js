@@ -6,6 +6,7 @@ const customerSlice = createSlice({
   name: 'customer',
   initialState: {
     customers: [],
+    totalCustomer: 0,
     isLoadingTableCustomer: false,
     paginationListCustomer: {
       currentPage: 1,
@@ -13,7 +14,6 @@ const customerSlice = createSlice({
       totalPage: 1,
       totalRecord: 0,
     },
-    allRole: [],
     visibleModalCreateOrUpdateCustomer: false,
     isLoadingBtnCreateOrUpdateCustomer: false,
     visitableModalUpdateStatusCustomer: false,
@@ -22,15 +22,8 @@ const customerSlice = createSlice({
     isLoadingBtnDeleteCustomer: false,
 
     errorCreateOrUpdateCustomer: {
-      code: "",
-      description: "",
-      discount_type: "",
-      discount_amount: "",
-      min_order_value: "",
-      start_date: "",
-      end_date: "",
-      is_anniversary: "",
-      is_loyalty_customer: "",
+      name: '',
+      phone_number: '',
     },
   },
   reducers: {
@@ -53,12 +46,14 @@ const customerSlice = createSlice({
     getList: (state) => ({
       ...state,
       customers: [],
+      totalCustomer: 0,
       isLoadingTableCustomer: true
     }),
     getListSuccess: (state, action) => ({
       ...state,
       isLoadingTableCustomer: false,
       customers: action.payload.metadata.listCustomer,
+      totalCustomer: action.payload.metadata.total,
       paginationListCustomer: {
         currentPage: action.payload.metadata.page,
         perPage: action.payload.metadata.limit,
@@ -69,6 +64,7 @@ const customerSlice = createSlice({
     getListFail: (state) => ({
       ...state,
       customers: [],
+      totalCustomer: 0,
       isLoadingTableCustomer: false
     }),
     createCustomer: (state) => ({

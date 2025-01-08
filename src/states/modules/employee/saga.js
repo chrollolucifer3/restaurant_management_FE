@@ -35,6 +35,7 @@ function* handleActions () {
       let errors = action.payload.data.details;
       
       yield put(setErrorCreateOrUpdateEmployee({
+        username: _.get(errors, 'username', ''),
         name: _.get(errors, 'full_name', ''),
         email: _.get(errors, 'email', ''),
         phone: _.get(errors, 'phone_number', ''),

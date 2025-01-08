@@ -107,10 +107,6 @@ function Category() {
     // setCategory(category);
   };
 
-  // const loadMoreFoods = (categoryId) => {
-  //   dispatch(getListFoodByCategory(categoryId));
-  // };
-
   const handleEdit = (category) => {
     let categorySelect = _.cloneDeep(category);
     setCategory(categorySelect);

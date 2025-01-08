@@ -12,6 +12,9 @@ import Customer from 'pages/Customer';
 import Discount from 'pages/Discount';
 import Menu from 'pages/Menu';
 import UpdatePassword from 'pages/Auth/UpdatePassword';
+import Table from 'pages/Table';
+import Payment from 'pages/Payment';
+import Bill from 'pages/Bill';
 
 import { rootLoader } from "./rootLoader";
 
@@ -107,6 +110,27 @@ const router = createBrowserRouter([
     element: <UpdatePassword/>,
     loader: ({request}) => rootLoader(
       {request}, true, 'LOAD_AUTH_PAGE'
+    )
+  },
+  {
+    path: '/table',
+    element: <Table/>,
+    loader: ({request}) => rootLoader(
+      {request}, true, 'LOAD_TABLE_PAGE'
+    )
+  },
+  {
+    path: '/payment',
+    element: <Payment/>,
+    loader: ({request}) => rootLoader(
+      {request}, true, 'LOAD_PAYMENT_PAGE'
+    )
+  },
+  {
+    path: '/bill',
+    element: <Bill/>,
+    loader: ({request}) => rootLoader(
+      {request}, true, 'LOAD_BILL_PAGE'
     )
   }
 ]);

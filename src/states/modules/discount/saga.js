@@ -52,7 +52,16 @@ import {
       if (status === 409) {
         let errors = action.payload.data.details;
         yield put(setErrorCreateOrUpdateDiscount({
-          phone_number: _.get(errors, 'phone_number', ''),
+          code: _.get(errors, 'code', ''),
+          description: _.get(errors, 'description', ''),
+          discount_type: _.get(errors, 'discount_type', ''),
+          discount_amount: _.get(errors, 'discount_amount', ''),
+          min_order_value: _.get(errors, 'min_order_value', ''),
+          start_date: _.get(errors, 'start_date', ''),
+          end_date: _.get(errors, 'end_date', ''),
+          is_anniversary: _.get(errors, 'is_anniversary', ''),
+          is_loyal_customer: _.get(errors, 'is_loyal_customer', ''),
+          total_money_spent: _.get(errors, 'total_money_spent', ''),
         }));
       } else if (status === 403) {
         getNotification('error', "You don't have permission to access!");

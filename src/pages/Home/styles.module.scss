@@ -2,6 +2,14 @@
 
 .dashboardWrap {
   .overviewWrap {
+    .bestSellerWrap {
+      max-width: 600px; // Đặt chiều rộng tối đa cho bảng
+      margin: 0 auto; // Căn giữa
+      table {
+        font-size: 14px; // Giảm kích thước chữ (nếu cần)
+      }
+    }
+    
     .itemWrap {
       background: $colorWhite;
       padding: 20px;
@@ -13,7 +21,7 @@
           margin-bottom: 10px;
         }
         .numberWrap {
-          font-size: 28px;
+          font-size: 18px;
           color: $colorBlack;
           font-weight: 600;
           margin-bottom: 10px;

@@ -14,6 +14,29 @@
     line-height: 1;
 }
 
+.ant-card-meta-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Số dòng mô tả tối đa */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px; /* Thiết lập chiều cao cố định hoặc tối thiểu cho description */
+  }
+
+  .antCardTitle {
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+
+    &:hover {
+        overflow: visible; /* Khi hover, sẽ hiển thị toàn bộ nội dung */
+        white-space: normal;
+    }
+  }
+
 .anticon-delete svg:hover {
     color: $colorRed!important;
   }

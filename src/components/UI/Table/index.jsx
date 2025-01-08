@@ -47,7 +47,7 @@ function TableRES(props) {
         <Pagination
           current={pagination.currentPage}
           total={pagination.totalRecord}
-          pageSize={pagination.perPage}
+          pageSize={pagination.perPage ? pagination.perPage : 10}
           onChange={onChangeCurrentPage}
         />
       </div>

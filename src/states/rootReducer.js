@@ -9,6 +9,9 @@ import categoryReducer from './modules/category';
 import customerReducer from './modules/customer';
 import discountReducer from './modules/discount';
 import menuReducer from './modules/menu';
+import tableReducer from './modules/table';
+import paymentReducer from './modules/payment';
+import billReducer from './modules/bill';
 
 const rootReducer = {
   app: appReducer,
@@ -22,6 +25,9 @@ const rootReducer = {
   customer: customerReducer,
   discount: discountReducer,
   menu: menuReducer,
+  table: tableReducer,
+  payment: paymentReducer,
+  bill: billReducer,
 }
 
 export default rootReducer

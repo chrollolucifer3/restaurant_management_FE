@@ -8,7 +8,7 @@ import {
 } from "states/modules/category";
 
 export const getListCategory = (dataFilter = { 
-    // perPage : '',
+    perPage : 10,
     page : 1
 }) => async (dispatch, getState) => {
     let path = `api/v1/foodCategories/getAll?limit=${dataFilter.perPage}&page=${dataFilter.page}`;

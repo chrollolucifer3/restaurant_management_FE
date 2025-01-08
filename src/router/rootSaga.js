@@ -8,6 +8,9 @@ import loadCategorySaga from "states/modules/category/saga";
 import loadCustomerSaga from "states/modules/customer/saga";
 import loadDiscountSaga from "states/modules/discount/saga";
 import loadMenuSaga from "states/modules/menu/saga";
+import loadTableSaga from "states/modules/table/saga";
+import loadPaymentSaga from "states/modules/payment/saga";
+import loadBillSaga from "states/modules/bill/saga";
 
 export const ROUTE_SAGAS = [];
 ROUTE_SAGAS['LOAD_AUTH_PAGE'] = loadAuthSaga
@@ -20,3 +23,8 @@ ROUTE_SAGAS['LOAD_CATEGORY_PAGE'] = loadCategorySaga
 ROUTE_SAGAS['LOAD_CUSTOMER_PAGE'] = loadCustomerSaga
 ROUTE_SAGAS['LOAD_DISCOUNT_PAGE'] = loadDiscountSaga
 ROUTE_SAGAS['LOAD_MENU_PAGE'] = loadMenuSaga
+ROUTE_SAGAS['LOAD_TABLE_PAGE'] = loadTableSaga
+ROUTE_SAGAS['LOAD_PAYMENT_PAGE'] = loadPaymentSaga
+ROUTE_SAGAS['LOAD_BILL_PAGE'] = loadBillSaga
+
+

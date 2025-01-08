@@ -4,6 +4,7 @@ const employeeSlice = createSlice({
   name: 'employee',
   initialState: {
     employees: [],
+    totalEmployee: 0,
     isLoadingTableEmployee: false,
     paginationListEmployee: {
       currentPage: 1,
@@ -50,12 +51,14 @@ const employeeSlice = createSlice({
     getList: (state) => ({
       ...state,
       employees: [],
+      totalEmployee: 0,
       isLoadingTableEmployee: true
     }),
     getListSuccess: (state, action) => ({
       ...state,
       isLoadingTableEmployee: false,
       employees: action.payload.metadata.listUser,
+      totalEmployee: action.payload.metadata.total,
       paginationListEmployee: {
         currentPage: action.payload.metadata.page,
         perPage: action.payload.metadata.limit,
@@ -66,6 +69,7 @@ const employeeSlice = createSlice({
     getListFail: (state) => ({
       ...state,
       employees: [],
+      totalEmployee: 0,
       isLoadingTableEmployee: false
     }),
     getAllRole: (state) => ({...state}),

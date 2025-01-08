@@ -4,17 +4,17 @@ import styles from "./styles.module.scss";
 import TableCustom from "../../components/UI/Table";
 import InputRES from "../../components/UI/Input";
 import ButtonRES from "../../components/UI/Button";
-import { FormOutlined, DeleteOutlined } from "@ant-design/icons";
+import { FormOutlined } from "@ant-design/icons";
 import CreateOrUpdate from "./components/CreateOrUpdate";
-import ModalConfirm from "../../components/UI/Modal/ModalConfirm";
+// import ModalConfirm from "../../components/UI/Modal/ModalConfirm";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getListDiscount,
-  handleDeleteDiscount,
+  // handleDeleteDiscount,
 } from "../../api/discount";
 import {
   setVisibleModalCreateOrUpdateDiscount,
-  setVisibleModalDeleteDiscount,
+  // setVisibleModalDeleteDiscount,
 } from "../../states/modules/discount";
 import _ from "lodash";
 // import moment from 'moment';
@@ -43,7 +43,7 @@ function Discount() {
       title: "Discount amount",
       dataIndex: "discount_amount",
       key: "discount_amount",
-      render: (text, record) => <span>{record.discount_amount} %</span>,
+      render: (text, record) => <span>{record.discount_amount.toLocaleString('vi-VN')}</span>,
       defaultSortOrder: "",
     },
     {
@@ -57,7 +57,7 @@ function Discount() {
       title: "Min order",
       dataIndex: "min_order_value",
       key: "min_order_value",
-      render: (text, record) => <span>{record.min_order_value}</span>,
+      render: (text, record) => <span>{record.min_order_value.toLocaleString('vi-VN')}</span>,
       defaultSortOrder: "",
     },
     {
@@ -78,7 +78,7 @@ function Discount() {
       title: "Total money spent",
       dataIndex: "total_money_spent",
       key: "total_money_spent",
-      render: (text, record) => <span>{record.total_money_spent}</span>,
+      render: (text, record) => <span>{record.total_money_spent.toLocaleString('vi-VN')}</span>,
       defaultSortOrder: "",
     },
     {
@@ -98,13 +98,13 @@ function Discount() {
               >
                 <FormOutlined />
               </div>
-              <div
+              {/* <div
                 onClick={() => handleShowConfirmDelete(record)}
                 className={styles.btnWrap}
                 title="Delete"
               >
                 <DeleteOutlined />
-              </div>
+              </div> */}
             </div>
           ) : (
             ""
@@ -123,9 +123,9 @@ function Discount() {
   const paginationListDiscount = useSelector(
     (state) => state.discount.paginationListDiscount
   );
-  const visibleModalDeleteDiscount = useSelector(
-    (state) => state.discount.visibleModalDeleteDiscount
-  );
+  // const visibleModalDeleteDiscount = useSelector(
+  //   (state) => state.discount.visibleModalDeleteDiscount
+  // );
 
   const [discount, setDiscount] = useState({});
   const [configModal, setConfigModal] = useState({
@@ -163,15 +163,15 @@ function Discount() {
     });
   };
 
-  const handleShowConfirmDelete = (discount) => {
-    let discountSelect = _.cloneDeep(discount);
-    setDiscount(discountSelect);
-    dispatch(setVisibleModalDeleteDiscount(true));
-  };
+  // const handleShowConfirmDelete = (discount) => {
+  //   let discountSelect = _.cloneDeep(discount);
+  //   setDiscount(discountSelect);
+  //   dispatch(setVisibleModalDeleteDiscount(true));
+  // };
 
-  const handleConfirmDeleteDiscount = () => {
-    dispatch(handleDeleteDiscount(discount.id));
-  };
+  // const handleConfirmDeleteDiscount = () => {
+  //   dispatch(handleDeleteDiscount(discount.id));
+  // };
 
   const changeCurrentPage = (page) => {
     setDataFilter({ ...dataFilter, page: page });
@@ -261,14 +261,14 @@ function Discount() {
 
         <CreateOrUpdate discount={discount} configModal={configModal} />
 
-        <ModalConfirm
+        {/* <ModalConfirm
           isModalOpen={visibleModalDeleteDiscount}
           title={`Do you want delete the discount with code ${discount.code}?`}
           textBtnConfirm="Delete"
           description={`Are you sure you want to delete the discount with code ${discount.code}? Your action can not be undone.`}
           onClose={() => dispatch(setVisibleModalDeleteDiscount(false))}
           onConfirm={() => handleConfirmDeleteDiscount()}
-        />
+        /> */}
       </div>
     </MainLayout>
   );

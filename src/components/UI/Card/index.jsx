@@ -35,14 +35,16 @@ function CardRES(props) {
         cover={cover && <img alt="example" src={cover} />}
         bordered={bordered}
       >
-        <Meta title={title} description={description} />
-        <div className={styles.unitWrap}>Size: {unit}</div>
+        <Meta title={<div className={styles.antCardTitle}>{title}</div>} description={description} />
+        <div style={{
+          padding: "8px 0",
+        }}>Kích cỡ: {unit}</div>
         <div style={{
               color: "#d70018",
               fontSize: "18px",
               fontWeight: 700,
               lineHeight: 1,
-        }}>{price.toLocaleString('vi-VN')}đ</div>
+        }}>{price.toLocaleString('vi-VN')} đ</div>
       </Card>
     </div>
   );

@@ -41,6 +41,9 @@ import {
       if (status === 422) {
         let errors = action.payload.data.details;
         yield put(setErrorCreateOrUpdateMenu({
+          name: _.get(errors, 'name', ''),
+          price: _.get(errors, 'price', ''),
+          description: _.get(errors, 'description', ''),
           unit_id: _.get(errors, 'unit_id', ''),
           category_id: _.get(errors, 'category_id', ''),
         }));

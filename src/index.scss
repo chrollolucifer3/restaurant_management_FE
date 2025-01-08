@@ -289,3 +289,53 @@ body {
     }
   }
 }
+
+// phần input của order
+
+.selectedItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.itemName {
+  flex: 2;
+  text-align: left;
+}
+
+.itemQuantity {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemQuantity .ant-input-number {
+  width: 60px; /* Đặt chiều rộng cố định */
+  text-align: center; /* Nội dung căn giữa */
+}
+
+.itemTotal {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+}
+
+// Phần thống kê 
+.dateRangeWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start!important; /* Căn trái các phần tử */
+  
+  .ant-picker-range {
+    margin-right: 10px; /* Khoảng cách giữa RangePicker và Button */
+    width: 200px; /* Điều chỉnh chiều rộng RangePicker */
+  }
+
+  .ant-btn {
+    margin-bottom: 0; /* Loại bỏ khoảng cách dưới Button */
+  }
+}
+

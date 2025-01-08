@@ -9,7 +9,7 @@ import {
       isLoadingTableMenu: false,
       paginationListMenu: {
         currentPage: 1,
-        perPage: 10,
+        perPage: 16,
         totalPage: 1,
         totalRecord: 0,
       },
@@ -21,6 +21,11 @@ import {
       isLoadingBtnDeleteMenu: false,
   
       errorCreateOrUpdateMenu: {
+        name: '',
+        price: '',
+        description: '',
+        category_id: '',
+        unit_id: '',
       },
     },
     reducers: {

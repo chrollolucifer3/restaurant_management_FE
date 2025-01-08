@@ -95,8 +95,8 @@ function CreateOrUpdate(props) {
       min_order_value: "",
       start_date: null,
       end_date: null,
-      is_anniversary: "",
-      is_loyalty_customer: "",
+      is_anniversary: 0,
+      is_loyalty_customer: 0,
       total_money_spent: "",
     });
   };
@@ -115,7 +115,7 @@ function CreateOrUpdate(props) {
       }
     } else if (type === "is_anniversary" || type === "is_loyalty_customer") {
       // Chuyển giá trị thành 1 hoặc 0
-      data[type] = valueInput === "true" ? "true" : "false";
+      data[type] = valueInput === 1 ? 1 : 0;
     } else if (type === "discount_type") {
       data[type] = valueInput; // Gán giá trị cho discount_type
     } else {
@@ -264,20 +264,20 @@ function CreateOrUpdate(props) {
             onChange={(e) =>
               handleChangeInput(e.target.value, "is_loyalty_customer")
             }
-            value={dataCreateOrUpdate.is_loyalty_customer === "true" ? "true" : "false"}
+            value={dataCreateOrUpdate.is_loyalty_customer === 1 ? 1 : 0}
           >
-            <Radio value="true">Yes</Radio>
-            <Radio value="false">No</Radio>
+            <Radio value={1}>Yes</Radio>
+            <Radio value={0}>No</Radio>
           </Radio.Group>
         </div>
         <div className={styles.checkboxWrapper}>
           <div className={styles.label}>Is anniversary? *</div>
           <Radio.Group
             onChange={(e) => handleChangeInput(e.target.value, "is_anniversary")}
-            value={dataCreateOrUpdate.is_anniversary === "true" ? "true" : "false"}
+            value={dataCreateOrUpdate.is_anniversary === 1 ? 1 : 0}
           >
-            <Radio value="true">Yes</Radio>
-            <Radio value="false">No</Radio>
+            <Radio value={1}>Yes</Radio>
+            <Radio value={0}>No</Radio>
           </Radio.Group>
         </div>
         <div className={styles.inputWrapper}>

@@ -7,7 +7,7 @@ import {
 } from "../../states/modules/menu";
 
 export const getListMenu = (dataFilter = {
-  perPage: 10,
+  perPage: 16,
   page: 1
 }) => async (dispatch, getState) => {
 

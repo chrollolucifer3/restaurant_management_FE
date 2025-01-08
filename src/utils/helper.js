@@ -7,6 +7,7 @@ import CloseIcon from 'assets/images/icon/close.svg';
 import success from 'assets/images/icon/notification/success_16x16.svg';
 import error from 'assets/images/icon/notification/error_16x16.svg';
 import warning from 'assets/images/icon/notification/warning_16x16.svg';
+import {routeMap} from "../router/routeMap";
 
 export const VALIDATE_EMAIL_REGEX = /^[a-zA-Z0-9][a-zA-Z0-9_.+-]{1,}@[a-z0-9]{1,}(\.[a-z0-9]{1,}){1,2}$/
 export const VALIDATE_PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,50}$/
@@ -18,26 +19,29 @@ export const handleCheckRoute = (routes, currentRoute) => {
   }
 };
 
-export const hasPermission = (permissions) => {
+
+export const hasPermission = (routePath) => {
   let { auth } = store.getState();
   let isPermission = false;
-  if (permissions) {
-    permissions.map(permission => {
-      if (
-        auth.authUser &&
-        auth.authUser.permissions &&
-        (
-          auth.authUser.permissions.includes('ADMIN') ||
-          auth.authUser.permissions.includes(permission)
-        )
-      ) {
-        isPermission = true
-      }
-    })
+  const userRole = auth?.authUser?.role_name; // Lấy role_name từ auth
+
+  // Nếu là route profile thì mọi người đều có quyền truy cập
+  if (routePath === '/profile') {
+    return true;
+  }
+
+  const route = routeMap.find((route) => route.path === routePath);
+
+  if (route) {
+    // Kiểm tra quyền truy cập dựa trên vai trò và permission
+    if (route.permissions && route.permissions.includes(userRole)) {
+      isPermission = true;
+    }
   }
 
   return isPermission;
-}
+};
+
 
 export const isValidEmail = (email) => {
   let result = false

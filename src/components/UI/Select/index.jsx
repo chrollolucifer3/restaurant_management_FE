@@ -16,7 +16,6 @@ SelectCustom.defaultProps = {
   error: "",
   disabled: false,
   isShowError: true,
-
   options: [],
   value: "",
   onBlur: () => {},
